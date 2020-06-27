@@ -107,6 +107,9 @@ const runAction = () => {
 
 	log(`Installing dependencies using ${useNpm ? "NPM" : "Yarn"}…`);
 	run(useNpm ? "npm install" : "yarn --verbose", pkgRoot);
+	if (platform === "mac") {
+		run("cat yarn-error.log")
+	}
 
 	// Run NPM build script if it exists
 	if (skipBuild) {
