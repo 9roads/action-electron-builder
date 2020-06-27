@@ -108,6 +108,8 @@ const runAction = () => {
 	log(`Installing dependencies using ${useNpm ? "NPM" : "Yarn"}…`);
 	run(useNpm ? "npm install" : "yarn --verbose", pkgRoot);
 	if (platform === "mac") {
+		run ("pwd")
+		run("ls")
 		run("cat yarn-error.log")
 	}
 
